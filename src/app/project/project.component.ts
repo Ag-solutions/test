@@ -21,6 +21,8 @@ export class ProjectComponent implements OnInit {
     // this.http.get('https://api.github.com/repos/' + this.myProj.full_name + '/branches')
     // .map(response => response.json())
     // .subscribe(res => this.myBranches = res);
+    
+    //test function
     console.log(this.myProj);
     console.log(this.myBranches);
     console.log(this.myProj.full_name);
