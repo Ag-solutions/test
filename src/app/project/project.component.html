@@ -1,0 +1,11 @@
+<div class="col-md-6 jumbotron" *ngIf="myProj">
+  <h3 style="text-align: center">Name of project: <strong>{{myProj.name}}</strong></h3>
+  <h4 style="text-align: center">Desctiption of project: <strong>{{myProj.description}}</strong></h4>  
+  <hr>
+  <!-- <button (click)="infoProject()" class="btn btn-primary">INfo</button> -->
+  <span>Author: <a href={{myProj.owner.html_url}}>{{myProj.owner.login}}</a></span>
+  <div style="font-size: 25px">First 10 branches:</div>
+  <div *ngFor="let branche of (myBranches ? myBranches.slice(0,10): [])" style="font-size: 20px">
+    {{branche.name}}
+  </div>
+</div>

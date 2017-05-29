@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2 style="margin-top: 0; text-align: center">Creating by <a href="http://ag-solutions.ru">ag-solutions.ru</a></h2>
+    <h3>Searching github users and projects</h3>
+    <div class="input-group">
+      <input type="text" class="form-control" [(ngModel)]="myUser" placeholder="Search for github user`s projects...">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" (click)="getUser()" [routerLink]="myUser">Go!</button>
+      </span>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<router-outlet>
+   <app-project-info [myProfile]="myProfile" [myRepos]="myRepos"></app-project-info>
+</router-outlet>

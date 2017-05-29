@@ -1,0 +1,23 @@
+  <div *ngIf="myProfile" class="col-md-6">
+    <div *ngFor="let repo of sortedRepos()">
+      <div class="well">
+        <div class="row">
+          <div class="col-md-6" style="font-size: 20px; margin-top: 10px">
+            <strong>{{repo.name}}</strong> :{{repo.description}}
+          </div>
+          <div class="col-md-3" style="margin-top: 15px; margin-left: -20px">
+            <span class="label label-primary">Watchers: {{repo.watchers}}</span>
+            <span class="label label-success">Stars: {{repo.stargazers_count}}</span>
+          </div>
+          <div class="col-md-2" style="margin-top: 10px">
+            <a [routerLink]="repo.full_name" class="btn btn-default" (click)="choseProject(repo)">Project Info</a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <router-outlet>
+   <!-- <app-project ></app-project> -->
+   <app-project [myProj]="myProj" [myBranches]="myBranches"></app-project>
+</router-outlet>
